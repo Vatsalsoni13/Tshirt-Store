@@ -34,12 +34,7 @@ The admin can do following tasks:
 
 Create catagories, Create Products, Manage catagories, Manage Products and Manage Orders.
 
-The credentials for admin login are:
 
-```
-username: admin@gmail.com
-password: admin
-```
 GO and try out these features.
 
 #### __USER__
