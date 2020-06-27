@@ -28,9 +28,7 @@ As its one of the e-commerce its a never ending thing, I have tried to apply the
 
 #### ADMIN 
 This is the admin section of the store or the part where owner has authorities.
-It is protected by middlewares so, no normal user can can login in.
-
-The admin can do following tasks:
+It is protected by middlewares so, no normal user can can login in. The admin can do following tasks:
 
 Create catagories, Create Products, Manage catagories, Manage Products and Manage Orders.
 
@@ -40,7 +38,6 @@ GO and try out these features.
 #### __USER__
 
 Like any other store website i have also implemented the basic fundamentals as it is.
-There is a signup and signin page.
 You will be redirected to Dashboard where your orderstatuses will be displayed, if any(Admins change the status of order).
 
 For buying the product there are two payment gateways Stripe and PayPal.
@@ -58,3 +55,4 @@ __Credentials for PayPal:__
 Card number: 378282246310005
 Expiry Date: 12/21
 ```
+
