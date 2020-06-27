@@ -82,7 +82,7 @@ const StripeCheckout = ({
     if (products.length > 0) {
       return (
         <StripeCheckoutButton
-          stripeKey="pk_test_51GuHoJJxT7MBHh0sL9CGgZlEghJJmCT1Mc3l2X6SnG2JBC5bonz04icSZaB9yyJc2yRCqf5l2X1RW4UGJKRp6UGO0016iffFMR"
+          stripeKey="pk_test_51GuHoJJxT7MBHh0s9gRGARsu1BDKzynOb072aULbXc5d8pjB3h4bVwZAtgXembZNpzxs5Z5m2inLbrsTwr3d1Qty00OaCHmUFd"
           token={makePayment}
           amount={getFinalPrice() * 100}
           name="Buy Tshirts"
