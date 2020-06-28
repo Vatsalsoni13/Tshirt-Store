@@ -1,6 +1,8 @@
 # Tshirt-Store
 This is a MERN(MongoDB, Express, React, NodeJS) stack project with two payment gateways *Stripe* and *PayPal*.</br>
-I have made this as an application of what I have learnt and learning in this stack.
+I have made this as an application of what I have learnt and learning in this stack. 
+This is not one of the perfect ones but I have tried to do my best.
+
 
 ### Installation
 Make sure you have <a href="https://nodejs.org/en/download/">NodeJS</a> and <a href="https://www.mongodb.com/try/download/community" >MongoDB</a>.
@@ -56,5 +58,4 @@ Card number: 378282246310005
 Expiry Date: 12/21
 ```
 
-
-Thnaks for reading through hope you like it and find it useful.
+Thanks for reading through hope you like it and find it useful.
