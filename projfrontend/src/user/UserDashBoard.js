@@ -69,7 +69,13 @@ const UserDashboard = () => {
           Profile
         </Link>
       </div>
-      {data &&
+      {data.length === 0 ? (
+        <div>
+          <h3>
+            No Orders visit <Link to="/">Home</Link> to explore more products
+          </h3>
+        </div>
+      ) : (
         data.map((order, index) => (
           // console.log(order);
           <div key={index} className="text-white bg-dark ">
@@ -114,7 +120,8 @@ const UserDashboard = () => {
               </tbody>
             </table>
           </div>
-        ))}
+        ))
+      )}
     </Base>
   );
 };

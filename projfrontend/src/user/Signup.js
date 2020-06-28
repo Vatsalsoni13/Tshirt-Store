@@ -50,6 +50,7 @@ const Signup = () => {
                 className="form-control"
                 onChange={handleChange("name")}
                 type="text"
+                placeholder="Name"
                 value={name}
               />
             </div>
@@ -59,6 +60,7 @@ const Signup = () => {
                 className="form-control"
                 onChange={handleChange("email")}
                 type="email"
+                placeholder="Email"
                 value={email}
               />
             </div>
@@ -68,6 +70,7 @@ const Signup = () => {
                 className="form-control"
                 onChange={handleChange("password")}
                 type="password"
+                placeholder="Password"
                 value={password}
               />
             </div>
@@ -153,7 +156,6 @@ const Signup = () => {
       {successMessage()}
       {errorMessage()}
       {signupForm()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
   );
 };

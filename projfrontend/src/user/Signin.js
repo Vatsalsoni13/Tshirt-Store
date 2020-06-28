@@ -6,8 +6,8 @@ import { signin, authenticate, isAuthenticated } from "../auth/helper";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "d@gmail.com",
-    password: "123456",
+    email: "",
+    password: "",
     error: "",
     loading: false,
     didRedirect: false,
@@ -86,6 +86,7 @@ const Signin = () => {
                 onChange={handleChange("email")}
                 value={email}
                 className="form-control"
+                placeholder="Email"
                 type="email"
               />
             </div>
@@ -96,6 +97,7 @@ const Signin = () => {
                 value={password}
                 className="form-control"
                 type="password"
+                placeholder="Password"
                 autoComplete="on"
               />
             </div>
@@ -113,7 +115,6 @@ const Signin = () => {
       {errorMessage()}
       {signinForm()}
       {performRedirect()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
   );
 };
