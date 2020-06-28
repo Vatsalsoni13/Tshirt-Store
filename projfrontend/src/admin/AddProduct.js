@@ -57,29 +57,33 @@ const AddProduct = ({ history }) => {
   }, []);
 
   const onSubmit = (event) => {
-    event.preventDefault();
-    setValues({ ...values, error: "", loading: true });
-    createAProduct(user._id, token, formData)
-      .then((data) => {
-        if (data.error) {
-          setValues({ ...values, error: data.error });
-        } else {
-          setValues({
-            ...values,
-            name: "",
-            description: "",
-            price: "",
-            photo: "",
-            stock: "",
-            loading: false,
-            getARedirect: true,
-            createdProduct: data.name,
-          });
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (photo) {
+      event.preventDefault();
+      setValues({ ...values, error: "", loading: true });
+      createAProduct(user._id, token, formData)
+        .then((data) => {
+          if (data.error) {
+            setValues({ ...values, error: data.error });
+          } else {
+            setValues({
+              ...values,
+              name: "",
+              description: "",
+              price: "",
+              photo: "",
+              stock: "",
+              loading: false,
+              getARedirect: true,
+              createdProduct: data.name,
+            });
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      setValues({ ...values, error: "No Image" });
+    }
   };
 
   const handleChange = (name) => (event) => {
@@ -129,6 +133,7 @@ const AddProduct = ({ history }) => {
             name="photo"
             accept="image"
             placeholder="choose a file"
+            required={true}
           />
         </label>
       </div>
@@ -139,6 +144,7 @@ const AddProduct = ({ history }) => {
           className="form-control"
           placeholder="Name"
           value={name}
+          required={true}
         />
       </div>
       <div className="form-group">
@@ -148,6 +154,7 @@ const AddProduct = ({ history }) => {
           className="form-control"
           placeholder="Description"
           value={description}
+          required={true}
         />
       </div>
       <div className="form-group">
@@ -157,6 +164,7 @@ const AddProduct = ({ history }) => {
           className="form-control"
           placeholder="Price"
           value={price}
+          required={true}
         />
       </div>
       <div className="form-group">
@@ -164,6 +172,7 @@ const AddProduct = ({ history }) => {
           onChange={handleChange("category")}
           className="form-control"
           placeholder="Category"
+          required={true}
         >
           <option>Select</option>
           {categories &&
@@ -181,6 +190,7 @@ const AddProduct = ({ history }) => {
           className="form-control"
           placeholder="Quantity"
           value={stock}
+          required={true}
         />
       </div>
 
