@@ -32,7 +32,7 @@ It is protected by middlewares so, no normal user can can login in. The admin ca
 
 Create catagories, Create Products, Manage catagories, Manage Products and Manage Orders.
 
-
+You have make an admin account first(I haven't kept any restrictions for making this as of now), create a category and create a new product after which you can login with a user account and buy those. 
 GO and try out these features.
 
 #### __USER__
