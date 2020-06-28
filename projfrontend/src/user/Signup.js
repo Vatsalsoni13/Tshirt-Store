@@ -23,9 +23,17 @@ const Signup = () => {
     setValues({ ...values, error: false });
     signup({ name, email, password, role })
       .then((data) => {
+        console.log(data);
+
         if (data.error) {
+          console.log("if");
+
           setValues({ ...values, error: data.error, success: false });
+        } else if (data.err) {
+          setValues({ ...values, error: data.err, success: false });
         } else {
+          console.log("else");
+
           setValues({
             ...values,
             name: "",
@@ -36,7 +44,10 @@ const Signup = () => {
           });
         }
       })
-      .catch(console.log("Error in signup"));
+      .catch(() => {
+        setValues({ ...values, error: "Already exists or Try agin later" });
+        console.log("Error in signup");
+      });
   };
 
   const signupForm = () => {
@@ -76,33 +87,29 @@ const Signup = () => {
             </div>
             <div className="form-group">
               <label className="text-light">Role</label>
-              <div class="form-check">
+              <div className="form-check">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="exampleRadios"
                   id="exampleRadios1"
                   value={0}
-                  checked={role == 0}
+                  checked={role === 0}
                   onChange={handleChange("role")}
                 />
-                <label class="form-check-label" for="exampleRadios1">
-                  User
-                </label>
+                <label className="form-check-label">User</label>
               </div>
-              <div class="form-check">
+              <div className="form-check">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="exampleRadios"
                   id="exampleRadios2"
                   value={1}
-                  checked={role == 1}
+                  checked={role === 1}
                   onChange={handleChange("role")}
                 />
-                <label class="form-check-label" for="exampleRadios2">
-                  Admin
-                </label>
+                <label className="form-check-label">Admin</label>
               </div>
               {/* <input
                 className="form-control"
