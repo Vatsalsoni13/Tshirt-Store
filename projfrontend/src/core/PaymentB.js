@@ -37,11 +37,15 @@ const PaymentB = ({ products, setReload = (f) => f, reload = undefined }) => {
     if (info.clientToken !== null) {
       return emptyCheck();
     } else {
-      return (
-        <Link to="/signin">
-          <button className="btn btn-warning">Signin</button>
-        </Link>
-      );
+      if (!isAuthenticated()) {
+        return (
+          <Link to="/signin">
+            <button className="btn btn-warning">Signin</button>
+          </Link>
+        );
+      } else {
+        return <h1>Loading...</h1>;
+      }
     }
   };
 
